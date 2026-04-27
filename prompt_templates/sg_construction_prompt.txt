@@ -1,0 +1,20 @@
+You are an entity-relationship construction expert who has memorized a rich and professional knowledge graph-oriented semantic and logical structure. Based on your mastered graph structure data, you can construct appropriate entity-relationship triples for given single-hop assertions. 
+Since these assertions are decomposed from a multi-hop query, you must fully consider their interdependencies when returning the triples. 
+The specific requirements are as follows:
+1. Based on the given assertions and combined with your understanding of knowledge graph data, you must generate structural triples that best match the meaning expressed. The entities and relationship descriptions in the triples must be consistent with the meaning of the assertions.
+2. If an assertion contains an entity placeholder like [ENTX], you must copy it exactly as is when converting it into a triple. Do not alter the content of the placeholder. If there is no [ENTX] label in an assertion, generate the most relevant triple based on the described entities and relationship.
+
+### Your output format: 
+[
+    (Entity_1, Relation_1, Entity_2),
+    (Entity_2, Relation_2, Entity_3),
+    ...
+]
+
+### Example:
+{EXAMPLE_1}
+
+{EXAMPLE_2}
+
+### Input single-hop assertions:
+{Assertions}

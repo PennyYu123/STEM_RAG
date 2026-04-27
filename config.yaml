@@ -1,0 +1,58 @@
+
+# Embedding configuration
+embedding:
+  model_name: "../Qwen3-Embedding-0.6B"
+  model_path: null
+  device: "auto"
+  batch_size: 32
+  max_length: 512
+  normalize: true
+
+# Storage configuration
+storage:
+  backend: "redis"
+  redis_host: "localhost"
+  redis_port: 6379
+  redis_db: 0
+  redis_password: null
+  disk_path: "./data/vectors"
+  cache_size: 1000000
+  webqsp_path: "../data/webqsp"
+  cwq_path: "../data/cwq"
+
+# Retrieval configuration
+retrieval:
+  top_k: 10
+  similarity_threshold: 0.7
+  max_candidates: 1000
+  use_gpu: false
+
+# Graph configuration
+graph:
+  max_depth: 3
+  max_paths: 100
+  edge_weight_threshold: 0.5
+  entity_placeholder: "[ENTX]"
+
+gnn:
+  input_dim: 512
+  rel_emb_dim: 512
+  hidden_dims: [512, 512, 512, 512, 512, 512]
+  message_func: 'distmult'
+  aggregate_func: 'sum'
+
+# API configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 1
+  max_request_size: 10485760
+  timeout: 30
+
+# Logging configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_path: null
+  max_bytes: 10485760
+  backup_count: 5
